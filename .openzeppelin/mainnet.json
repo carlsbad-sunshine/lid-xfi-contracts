@@ -302,11 +302,11 @@
       }
     },
     "LidSimplifiedPresale": {
-      "address": "0xCD243d70160707812C2475EabFCbC93B21b27fBc",
-      "constructorCode": "6080604052613829806100136000396000f3fe",
-      "bodyBytecodeHash": "b295d04dd7e3ea0cae6c1569830b8f2cc6c1e3322bcc4a8ec47060ec6987f48c",
-      "localBytecodeHash": "6cffdc91c3edcf0b842b485b50cc9941979ab9fafe94f74d7bb9ea6a45ba2851",
-      "deployedBytecodeHash": "6cffdc91c3edcf0b842b485b50cc9941979ab9fafe94f74d7bb9ea6a45ba2851",
+      "address": "0x84078967e5A353fc1C73366887010a8eeF8387dC",
+      "constructorCode": "608060405261385c806100136000396000f3fe",
+      "bodyBytecodeHash": "eebbef4639e83d4a49cd22479cac3e00b9535f6f9cc11cdd6b971226a3575522",
+      "localBytecodeHash": "f3c03cdc5e8c99a30eb778f7fb3f26cfaccf6769956d2d07b7f92828d5e10b7e",
+      "deployedBytecodeHash": "f3c03cdc5e8c99a30eb778f7fb3f26cfaccf6769956d2d07b7f92828d5e10b7e",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -337,7 +337,7 @@
           "members": [
             {
               "label": "bearer",
-              "astId": 7002,
+              "astId": 7017,
               "type": "t_mapping<t_bool>",
               "src": "150:32:27"
             }
@@ -380,7 +380,7 @@
           "contract": "Initializable",
           "path": "@openzeppelin\\upgrades\\contracts\\Initializable.sol",
           "label": "initialized",
-          "astId": 8142,
+          "astId": 8157,
           "type": "t_bool",
           "src": "757:24:35"
         },
@@ -388,7 +388,7 @@
           "contract": "Initializable",
           "path": "@openzeppelin\\upgrades\\contracts\\Initializable.sol",
           "label": "initializing",
-          "astId": 8144,
+          "astId": 8159,
           "type": "t_bool",
           "src": "876:25:35"
         },
@@ -396,7 +396,7 @@
           "contract": "Initializable",
           "path": "@openzeppelin\\upgrades\\contracts\\Initializable.sol",
           "label": "______gap",
-          "astId": 8206,
+          "astId": 8221,
           "type": "t_array:50<t_uint256>",
           "src": "1982:29:35"
         },
@@ -404,7 +404,7 @@
           "contract": "Ownable",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\ownership\\Ownable.sol",
           "label": "_owner",
-          "astId": 7502,
+          "astId": 7517,
           "type": "t_address",
           "src": "526:22:31"
         },
@@ -412,7 +412,7 @@
           "contract": "Ownable",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\ownership\\Ownable.sol",
           "label": "______gap",
-          "astId": 7615,
+          "astId": 7630,
           "type": "t_array:50<t_uint256>",
           "src": "2471:29:31"
         },
@@ -420,7 +420,7 @@
           "contract": "ReentrancyGuard",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\utils\\ReentrancyGuard.sol",
           "label": "_guardCounter",
-          "astId": 8104,
+          "astId": 8119,
           "type": "t_uint256",
           "src": "733:29:34"
         },
@@ -428,7 +428,7 @@
           "contract": "ReentrancyGuard",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\utils\\ReentrancyGuard.sol",
           "label": "______gap",
-          "astId": 8137,
+          "astId": 8152,
           "type": "t_array:50<t_uint256>",
           "src": "1563:29:34"
         },
@@ -436,7 +436,7 @@
           "contract": "PauserRole",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\access\\roles\\PauserRole.sol",
           "label": "_pausers",
-          "astId": 7099,
+          "astId": 7114,
           "type": "t_struct<Roles.Role>",
           "src": "327:27:28"
         },
@@ -444,7 +444,7 @@
           "contract": "PauserRole",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\access\\roles\\PauserRole.sol",
           "label": "______gap",
-          "astId": 7199,
+          "astId": 7214,
           "type": "t_array:50<t_uint256>",
           "src": "1193:29:28"
         },
@@ -452,7 +452,7 @@
           "contract": "Pausable",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\lifecycle\\Pausable.sol",
           "label": "_paused",
-          "astId": 7221,
+          "astId": 7236,
           "type": "t_bool",
           "src": "909:20:29"
         },
@@ -460,7 +460,7 @@
           "contract": "Pausable",
           "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\lifecycle\\Pausable.sol",
           "label": "______gap",
-          "astId": 7304,
+          "astId": 7319,
           "type": "t_array:50<t_uint256>",
           "src": "2163:29:29"
         },
@@ -670,7 +670,18 @@
         "hasSelfDestruct": false,
         "hasDelegateCall": false,
         "hasInitialValuesInDeclarations": false,
-        "uninitializedBaseContracts": []
+        "uninitializedBaseContracts": [],
+        "storageUncheckedVars": [
+          {
+            "contract": "PauserRole",
+            "path": "@openzeppelin\\contracts-ethereum-package\\contracts\\access\\roles\\PauserRole.sol",
+            "label": "_pausers",
+            "astId": 7114,
+            "type": "t_struct<Roles.Role>",
+            "src": "327:27:28"
+          }
+        ],
+        "storageDiff": []
       }
     }
   },
@@ -698,7 +709,7 @@
       {
         "address": "0x190C9E680623701edfc85C4cd59cc2ab2213E4B0",
         "version": "1.0.0",
-        "implementation": "0xCD243d70160707812C2475EabFCbC93B21b27fBc",
+        "implementation": "0x84078967e5A353fc1C73366887010a8eeF8387dC",
         "admin": "0x0393295E334866F0857f0B2ebD78512af9457F55",
         "kind": "Upgradeable"
       }

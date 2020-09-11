@@ -187,8 +187,8 @@ contract LidSimplifiedPresale is Initializable, Ownable, ReentrancyGuard, Pausab
         isRefunding = true;
     }
 
-    function topUpRefundFund() external payable whenPaused {
-        require(isRefunding, "Refunds not active");
+    function topUpRefundFund() external payable onlyOwner {
+
     }
 
     function claimRefund(address payable account) external whenPaused {
@@ -197,6 +197,10 @@ contract LidSimplifiedPresale is Initializable, Ownable, ReentrancyGuard, Pausab
         require(refundAmt > 0, "Nothing to refund");
         refundedEth[account] = refundedEth[account].add(refundAmt);
         account.transfer(refundAmt);
+    }
+
+    function updateHardcap(uint valueWei) external onlyOwner {
+        hardcap = valueWei;
     }
 
     function deposit(address payable referrer) public payable whenPresaleActive nonReentrant whenNotPaused {
@@ -212,16 +216,18 @@ contract LidSimplifiedPresale is Initializable, Ownable, ReentrancyGuard, Pausab
             accountCurrentDeposit.add(msg.value) <= getMaxWhitelistedDeposit(),
             "Deposit exceeds max buy per address for whitelisted addresses."
         );
-        require(address(this).balance.sub(fee) <= hardcap, "Cannot deposit more than hardcap.");
+        require(address(this).balance.sub(fee) <= hardcap.add(100), "Cannot deposit more than hardcap.");
 
         redeemer.setDeposit(msg.sender, msg.value.sub(fee), address(this).balance.sub(fee));
 
-        if (referrer != address(0x0) && referrer != msg.sender) {
-            earnedReferrals[referrer] = earnedReferrals[referrer].add(fee);
-            referralCounts[referrer] = referralCounts[referrer].add(1);
-            referrer.transfer(fee);
-        } else {
-            lidFund.transfer(fee);
+        if (fee != 0) {
+            if (referrer != address(0x0) && referrer != msg.sender) {
+                earnedReferrals[referrer] = earnedReferrals[referrer].add(fee);
+                referralCounts[referrer] = referralCounts[referrer].add(1);
+                referrer.transfer(fee);
+            } else {
+                lidFund.transfer(fee);
+            }
         }
     }
 
